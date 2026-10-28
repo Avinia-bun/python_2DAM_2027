@@ -1,0 +1,13 @@
+Algoritmo mi_algoritmo
+  Definir contador Como Entero
+  Definir numero Como Entero
+  contador = 0
+  numero = 0
+  Mientras numero>=0 Hacer
+    Imprimir "Introduce un numero"
+    Leer numero
+    contador = contador + 1
+  FinMientras
+
+  Imprimir "Total de números positivos introducidos ",contador-1
+FinAlgoritmo

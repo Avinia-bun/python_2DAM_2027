@@ -1,0 +1,35 @@
+Algoritmo mi_algoritmo
+  Definir saldo Como Real
+  saldo = 1000
+
+  Definir opcion Como Entero
+  Imprimir "1 Retirar 2 Salir"
+  Leer opcion
+  
+  Si (opcion!=1) Y (opcion!=2) Entonces
+    Imprimir "Opcion no valida."
+  FinSi
+
+  Mientras opcion==1 Hacer
+    Imprimir "Introduce la cantidad a retirar"
+    Definir cantidad Como Real
+    Leer cantidad
+    Si cantidad>saldo Entonces
+      Imprimir "No hay saldo suficiente para esa retirada."
+    FinSi
+
+    Si cantidad<=saldo Entonces
+      saldo = saldo -cantidad
+    FinSi
+
+    Imprimir "Saldo restante : ", saldo
+
+    Imprimir "Quieres continuar? 1 Sí 2 Salir"
+    Leer opcion
+  FinMientras
+
+  Si opcion==2 O saldo==0 Entonces
+    Imprimir "Saliendo...."
+  FinSi
+  
+FinAlgoritmo

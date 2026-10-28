@@ -1,0 +1,20 @@
+Algoritmo mi_algoritmo
+  Imprimir "Introduce los segundos"
+  Definir segundos Como Entero
+  Leer segundos
+
+  Definir minutos Como Entero
+  Definir horas Como Entero
+
+  Si segundos>=60 Entonces
+    minutos = segundos/60
+    segundos = segundos%60
+  FinSi
+
+  Si minutos>=60 Entonces
+    horas = minutos/60
+    minutos =  minutos%60
+  FinSi
+
+  Imprimir "Segundos ",segundos," Minutos ",minutos," Horas ",horas
+FinAlgoritmo

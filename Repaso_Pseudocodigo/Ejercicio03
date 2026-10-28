@@ -1,0 +1,7 @@
+Algoritmo mi_algoritmo
+  Definir palabra como Cadena
+  Imprimir "Introduce una palabra"
+  Leer palabra
+
+  Imprimir "Tiene ", Longitud(palabra), " letras"
+FinAlgoritmo

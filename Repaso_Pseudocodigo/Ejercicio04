@@ -1,0 +1,15 @@
+Algoritmo mi_algoritmo
+Definir numero, invertido Como Cadena
+  Definir i Como Entero
+
+  Escribir "Introduce un numero entero:"
+  Leer numero
+
+  invertido <- ""
+  Para i <- Longitud(numero) Hasta 1 Con Paso -1 Hacer
+    invertido <- invertido + Subcadena(numero, i, i)
+  FinPara
+
+  Escribir "Numero invertido: ", invertido
+  
+FinAlgoritmo

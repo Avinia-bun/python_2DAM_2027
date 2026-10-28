@@ -1,0 +1,17 @@
+Algoritmo mi_algoritmo
+  Definir numero Como Entero
+  Imprimir "Introduce un numero"
+  Leer numero
+  
+  Definir total como Entero
+  total = 0
+  Definir digito Como Entero
+  
+  Mientras numero > 0 Hacer
+    digito = numero MOD 10
+    total = total + digito
+    numero = trunc(numero / 10)
+  FinMientras
+
+  Imprimir "La suma de los digitos es ", total
+FinAlgoritmo

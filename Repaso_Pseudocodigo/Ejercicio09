@@ -1,0 +1,21 @@
+Algoritmo mi_algoritmo
+  Definir numero Como Entero
+  numero = Aleatorio(1,101)
+
+  Definir intento Como Entero
+  Imprimir "Intenta adivinar el numero"
+  Leer intento
+
+  Mientras intento!=numero Hacer
+    Imprimir "Fallaste"
+    Si intento>numero Entonces
+      Imprimir "El numero secreto es menor."
+    SiNo 
+      Imprimir "El numero secreto es mayor."
+    FinSi
+    Imprimir "Vuelve a intentarlo"
+    Leer intento
+  FinMientras
+
+  Imprimir "Acertaste"
+FinAlgoritmo
