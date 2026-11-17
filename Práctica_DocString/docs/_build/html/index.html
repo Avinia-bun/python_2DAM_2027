@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Practica_Documentacion &#8212; documentación de Practica_Documentacion - </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=e2bb6099"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="practica-documentacion">
+<h1>Practica_Documentacion<a class="headerlink" href="#practica-documentacion" title="Link to this heading">¶</a></h1>
+</section>
+<section id="operaciones">
+<h1>Operaciones<a class="headerlink" href="#operaciones" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function" id="module-operaciones">
+<dt class="sig sig-object py" id="operaciones.guardar_en_bd">
+<span class="sig-prename descclassname"><span class="pre">operaciones.</span></span><span class="sig-name descname"><span class="pre">guardar_en_bd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dni</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nombre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forzar_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operaciones.guardar_en_bd" title="Link to this definition">¶</a></dt>
+<dd><p>Valida el DNI y el nombre, y simula el almacenamiento de los datos en una base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dni</strong> (<em>str</em>) – DNI del usuario a registrar.</p></li>
+<li><p><strong>nombre</strong> (<em>str</em>) – Nombre del usuario a registrar.</p></li>
+<li><p><strong>forzar_error</strong> (<em>bool</em>) – Bandera opcional para simular un fallo de conexión (por defecto es False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Muestra<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Si alguna de las funciones de validación de DNI o nombre falla.</p></li>
+<li><p><strong>ConnectionError</strong> – Si forzar_error se establece en True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operaciones.validar_dni">
+<span class="sig-prename descclassname"><span class="pre">operaciones.</span></span><span class="sig-name descname"><span class="pre">validar_dni</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dni</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operaciones.validar_dni" title="Link to this definition">¶</a></dt>
+<dd><p>Valida que un DNI español sea correcto comprobando su longitud, formato numérico y letra de control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dni</strong> (<em>str</em>) – Cadena de texto que representa el DNI a validar (debe tener 8 dígitos y 1 letra).</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Retorna True si el DNI es totalmente válido.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Muestra<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Si la longitud no es 9, si la parte numérica no es válida, si no termina en letra o si la letra no coincide con el algoritmo oficial.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operaciones.validar_nombre">
+<span class="sig-prename descclassname"><span class="pre">operaciones.</span></span><span class="sig-name descname"><span class="pre">validar_nombre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nombre</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operaciones.validar_nombre" title="Link to this definition">¶</a></dt>
+<dd><p>Valida que un nombre de usuario cumpla con los requisitos de longitud y formato alfabético.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nombre</strong> (<em>str</em>) – Cadena de texto con el nombre del usuario.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Retorna True si el nombre es válido.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Muestra<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Si el nombre excede los 50 caracteres, está vacío, o contiene números/símbolos no alfabéticos.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Practica_Documentacion</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Atenea.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.2.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
