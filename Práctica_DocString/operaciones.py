@@ -1,6 +1,6 @@
+"""Módulo de validación de identidad y gestión de base de datos."""
 from string import *
 
-"""Módulo de validación de identidad y gestión de base de datos."""
 
 def validar_dni(dni):  
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module operaciones</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">operaciones</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Cusers%5Calumnado%5Cdesktop%5Crepos%5Cpython_2dam_2027%5Cpr%C3%A1ctica_docstring%5Coperaciones.py">d:\users\alumnado\desktop\repos\python_2dam_2027\práctica_docstring\operaciones.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;de&nbsp;validación&nbsp;de&nbsp;identidad&nbsp;y&nbsp;gestión&nbsp;de&nbsp;base&nbsp;de&nbsp;datos.</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-guardar_en_bd"><strong>guardar_en_bd</strong></a>(dni, nombre, forzar_error=False)</dt><dd><span class="code">Valida&nbsp;el&nbsp;DNI&nbsp;y&nbsp;el&nbsp;nombre,&nbsp;y&nbsp;simula&nbsp;el&nbsp;almacenamiento&nbsp;de&nbsp;los&nbsp;datos&nbsp;en&nbsp;una&nbsp;base&nbsp;de&nbsp;datos.<br>
+&nbsp;<br>
+:param&nbsp;dni:&nbsp;DNI&nbsp;del&nbsp;usuario&nbsp;a&nbsp;registrar.<br>
+:type&nbsp;dni:&nbsp;str<br>
+:param&nbsp;nombre:&nbsp;Nombre&nbsp;del&nbsp;usuario&nbsp;a&nbsp;registrar.<br>
+:type&nbsp;nombre:&nbsp;str<br>
+:param&nbsp;forzar_error:&nbsp;Bandera&nbsp;opcional&nbsp;para&nbsp;simular&nbsp;un&nbsp;fallo&nbsp;de&nbsp;conexión&nbsp;(por&nbsp;defecto&nbsp;es&nbsp;False).<br>
+:type&nbsp;forzar_error:&nbsp;bool<br>
+:raises&nbsp;ValueError:&nbsp;Si&nbsp;alguna&nbsp;de&nbsp;las&nbsp;funciones&nbsp;de&nbsp;validación&nbsp;de&nbsp;DNI&nbsp;o&nbsp;nombre&nbsp;falla.<br>
+:raises&nbsp;ConnectionError:&nbsp;Si&nbsp;forzar_error&nbsp;se&nbsp;establece&nbsp;en&nbsp;True.</span></dd></dl>
+ <dl><dt><a name="-validar_dni"><strong>validar_dni</strong></a>(dni)</dt><dd><span class="code">Valida&nbsp;que&nbsp;un&nbsp;DNI&nbsp;español&nbsp;sea&nbsp;correcto&nbsp;comprobando&nbsp;su&nbsp;longitud,&nbsp;formato&nbsp;numérico&nbsp;y&nbsp;letra&nbsp;de&nbsp;control.<br>
+&nbsp;<br>
+:param&nbsp;dni:&nbsp;Cadena&nbsp;de&nbsp;texto&nbsp;que&nbsp;representa&nbsp;el&nbsp;DNI&nbsp;a&nbsp;validar&nbsp;(debe&nbsp;tener&nbsp;8&nbsp;dígitos&nbsp;y&nbsp;1&nbsp;letra).<br>
+:type&nbsp;dni:&nbsp;str<br>
+:return:&nbsp;Retorna&nbsp;True&nbsp;si&nbsp;el&nbsp;DNI&nbsp;es&nbsp;totalmente&nbsp;válido.<br>
+:rtype:&nbsp;bool<br>
+:raises&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;longitud&nbsp;no&nbsp;es&nbsp;9,&nbsp;si&nbsp;la&nbsp;parte&nbsp;numérica&nbsp;no&nbsp;es&nbsp;válida,&nbsp;si&nbsp;no&nbsp;termina&nbsp;en&nbsp;letra&nbsp;o&nbsp;si&nbsp;la&nbsp;letra&nbsp;no&nbsp;coincide&nbsp;con&nbsp;el&nbsp;algoritmo&nbsp;oficial.</span></dd></dl>
+ <dl><dt><a name="-validar_nombre"><strong>validar_nombre</strong></a>(nombre)</dt><dd><span class="code">Valida&nbsp;que&nbsp;un&nbsp;nombre&nbsp;de&nbsp;usuario&nbsp;cumpla&nbsp;con&nbsp;los&nbsp;requisitos&nbsp;de&nbsp;longitud&nbsp;y&nbsp;formato&nbsp;alfabético.<br>
+&nbsp;<br>
+:param&nbsp;nombre:&nbsp;Cadena&nbsp;de&nbsp;texto&nbsp;con&nbsp;el&nbsp;nombre&nbsp;del&nbsp;usuario.<br>
+:type&nbsp;nombre:&nbsp;str<br>
+:return:&nbsp;Retorna&nbsp;True&nbsp;si&nbsp;el&nbsp;nombre&nbsp;es&nbsp;válido.<br>
+:rtype:&nbsp;bool<br>
+:raises&nbsp;ValueError:&nbsp;Si&nbsp;el&nbsp;nombre&nbsp;excede&nbsp;los&nbsp;50&nbsp;caracteres,&nbsp;está&nbsp;vacío,&nbsp;o&nbsp;contiene&nbsp;números/símbolos&nbsp;no&nbsp;alfabéticos.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ascii_letters</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'<br>
+<strong>ascii_lowercase</strong> = 'abcdefghijklmnopqrstuvwxyz'<br>
+<strong>ascii_uppercase</strong> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'<br>
+<strong>digits</strong> = '0123456789'<br>
+<strong>hexdigits</strong> = '0123456789abcdefABCDEF'<br>
+<strong>octdigits</strong> = '01234567'<br>
+<strong>printable</strong> = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&amp;<span class="repr">\'</span>()*+,-./:;&lt;=&gt;?@[<span class="repr">\\</span>]^_`{|}~ <span class="repr">\t\n\r\x0b\x0c</span>'<br>
+<strong>punctuation</strong> = '!"#$%&amp;<span class="repr">\'</span>()*+,-./:;&lt;=&gt;?@[<span class="repr">\\</span>]^_`{|}~'<br>
+<strong>whitespace</strong> = ' <span class="repr">\t\n\r\x0b\x0c</span>'</td></tr></table>
+</body></html>
