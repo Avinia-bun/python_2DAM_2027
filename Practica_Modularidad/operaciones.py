@@ -17,14 +17,16 @@ def validar_dni(dni):
         cadena = "TRWAGMYFPDXBNJZSQVHLCKE"
         if(cadena[idx] == letra):
             return True
-        else:
-            raise ValueError("La letra del DNI no se corresponde con la que debería tener.")
-
+        raise ValueError("La letra del DNI no se corresponde con la que debería tener.")
+    else:
+        raise ValueError("El DNI debe acabar en una letra.")
 
 def validar_nombre(nombre):
     
-    if(len(nombre)>50 or nombre is None):
-        raise ValueError("El nombre está vacío o tiene más de 50 carácteres.")
+    if(len(nombre)>50):
+        raise ValueError("El nombre tiene más de 50 carácteres.")
+    if not nombre:
+        raise ValueError("El nombre está vacío.")
     
     if(nombre.isalpha()!=True):
         raise ValueError("El nombre debe contener carácteres alfabéticos únicamente.")
@@ -40,5 +42,5 @@ def guardar_en_bd(dni, nombre, forzar_error = False):
     if(forzar_error==True):
         raise ConnectionError("No se pudo conectar a la base de datos.")
     else:
-        print("Usuario con DNI: {dni} y nombre {nombre} guardado en BD.")
+        print("Usuario con DNI:",dni, "y nombre", nombre, "guardado en BD.")
 

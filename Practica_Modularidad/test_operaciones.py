@@ -10,15 +10,17 @@ def test_validar_dni():
     with pytest.raises(ValueError, match="El DNI no cumple la longitud necesaria"):
         validar_dni("1")
 
-    with pytest.raises(ValueError, match="El DNI debe estar compuesto por 8 números seguidos de una letra."):
+    with pytest.raises(ValueError, match="El DNI debe acabar en una letra."):
         validar_dni("123456789")
 
 def test_validar_nombre():
     validar_nombre("Ana") == True
 
-    with pytest.raises(ValueError, match="El nombre está vacío o tiene más de 50 carácteres."):
-        validar_nombre("")
+    with pytest.raises(ValueError, match="El nombre tiene más de 50 carácteres."):
         validar_nombre("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    
+    with pytest.raises(ValueError, match="El nombre está vacío."):
+        validar_nombre("")
 
     with pytest.raises(ValueError, match="El nombre debe contener carácteres alfabéticos únicamente."):
         validar_nombre("Lu1s")
